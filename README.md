@@ -65,6 +65,10 @@ Cloudhead - LESS dynamic stylesheet language - http://lesscss.org
 Bryan Jone - LESS.app (Mac only) - http://incident57.com/less/
 ... and more coming soon.
 
+# Branch Notes
+
+The `mac-only` branch includes Less.app, a Mac app that watches your development folder and compiles `.less` files into `.css` files as you save them. Enjoy!
+
 # License
 
 Fraction.less Boilerplate is licensed under the Apache License 2.0. See the License.md file for details. This means you can use it however and wherever you want. You don't have to release any derivatives as open source and you are free to charge money for derived works. That's why I didn't go with the GPL. GPL kind of sucks...
