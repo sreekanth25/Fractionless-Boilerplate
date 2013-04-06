@@ -1,6 +1,6 @@
 # Fraction.less Boilerplate v2
 
-*Current version: 2.0.1*
+*Current version: 2.0.2*
 
 Fraction.less is an HTML/CSS quick-start kit to get your website or app front-end up and running quickly. It's HTML5 ready, utilizes backwards compatible CSS3, comes with a bunch of useful and common JavaScript functionality, and it has LESS and SASS support if you want it.
 
