@@ -84,7 +84,7 @@
 	float: right;
  }
 
-.last { // Last column in a row can't mess up our nice layout
+.last { /* Last column in a row can't mess up our nice layout */
 	margin-right: 0px;
 }
 
