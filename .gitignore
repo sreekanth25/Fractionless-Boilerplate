@@ -16,7 +16,7 @@
 *.esproj
 
 # Folders
-
+.sass-cache
 
 
 # Individual Files
