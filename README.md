@@ -1,12 +1,12 @@
 # Fraction.less Boilerplate v2
 
-*Current version: 2.0.2*
+*Current version: 2.0.3*
 
 Fraction.less is an HTML/CSS quick-start kit to get your website or app front-end up and running quickly. It's HTML5 ready, utilizes backwards compatible CSS3, comes with a bunch of useful and common JavaScript functionality, and it has LESS and SASS support if you want it.
 
 __Why use it?__
 
-Unlike most other frameworks, you'll spend most of your time building on top of Fraction.less rather than undoing the defaults. Also, unlike some other frameworks, sites built using Fraction.less won't *look* like they were built using Fraction.less. The framework gives you a great set of minimal defaults and doesn't allows you to build sites that are your own without having to unravel a lot of complicated, hard to customize code.
+Unlike most other frameworks, you'll spend most of your time building on top of Fraction.less rather than undoing the defaults. Also, unlike some other frameworks, sites built using Fraction.less won't *look* like they were built using Fraction.less. The framework gives you a great set of minimal defaults and allows you to build sites that are your own without having to unravel a lot of complicated, hard to customize code.
 
 ## Features
 
@@ -24,7 +24,7 @@ Unlike most other frameworks, you'll spend most of your time building on top of 
 	* The latest jQuery
 * HTML5 starting point
 * Icon font (latest Font-Awesome)
-* Various optimizations (robots.txt, humans.txt, .htaccess, crossdomain policy, etc.)
+* Various optimizations and goodies (robots.txt, humans.txt, .htaccess, crossdomain policy, etc.)
 
 ## Components
 
@@ -32,8 +32,8 @@ Fraction.less Boilerplate uses code from the following projects:
 
 * jQuery 1.9.1
 * Normalize.css CSS 'reset'
-* LESS CSS stylesheet language
-* SASS support (__New!__)
+* LESS support
+* SASS support
 * Parsley.js for client side form validation
 * Vanity JS for common JS effects
 * Test Suite references original projects within the Usage document
@@ -99,7 +99,7 @@ Users of verion 1.0 will remember the `.full-width`, `.left`, `.right`, and colu
 
 This file imports all of the styles besides your custom styles. The order of imports in these files is very important as each file may depend on variables or mixins defined in the previous file. Add your styles below the first set of imports (as indicated in the file) but not before the last set of imports for print and mobile styles.
 
-If using a compiler, you only need to compile the `style.*` file as your compiler should import and compile all included files into a single `style.css` file. If you're using plain CSS it's best to avoid all the `@import` statements and manually copy and paste each file into `style.css` manually to avoid too many HTTP requests from slowing down your site.
+If using a compiler, you only need to compile the `style.*` file as your compiler should import and compile all included files into a single `style.css` file. If you're using plain CSS it's best to avoid all the `@import` statements and copy and paste each file into `style.css` manually to avoid too many HTTP requests slowing down your site.
 
 __Using LESS without a compiler__
 
@@ -132,6 +132,20 @@ I have to give credit where credit is due. Thanks to all these folks who are by 
 * [Enavu](http://vanity.enavu.com/) - Vanity JS common jQuery plugin starter kit
 
 ... and many more I know I'm forgetting.
+
+# Development
+
+If you see a better way to do something or see errors in the code please feel free to submit a pull request. I'd even be flattered if you forked this and created a better overall product or something specific to your own needs.
+
+If you plan to contribute, please keep these guidelines in mind:
+
+* Make your changes in a new branch and push that instead. Name the branch "contrib-" followed by a short description of the change like: `contrib-rgba-mixin-update`
+* The `development` branch is now deprecated. `develop` is now the branch where all new changes are tested and worked on. The entire branching strategy has also changed in version 2.0.3 - see below for more on this.
+* If you must merge your changes, merge into the `develop` branch only.
+
+## Branching Strategy
+
+Fraction.less uses a pretty standard branching strategy with a master, develop, and feature branches. You should start all new work in a feature branch (contributors should use the naming convention described above). Feature branches are then tested by themselves and merged into the `develop` branch. From there, they are finally merged into master only when all bugs are fixed and the new code is polished. As of version 2.0.3 master will never be worked in directly. Changes will alawys trickle up from feature branches to develop and finally to master. Master is always the most recent stable version and develop is the bleeding edge complete version. All other branches are to be considered unsafe and care should be taken before using them as a starting point for any project.
 
 # License
 
