@@ -152,3 +152,11 @@
 	-ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
 	filter: ~"alpha(opacity=@{opperc})";
 }
+
+/* RGBA Shortcut */
+
+.rgba(@color: #000, @opacity: 0.9) { // NOTE: This is called "compatible-rgba" in the SASS version to avoid conflict w/built-in rgba
+	background: @color; // Fallback for when ALL else fails
+	background: rgb(red(@color), green(@color), blue(@color)); // Fallback for browsers with RGB support
+	background: rgba(red(@color), green(@color), blue(@color), @opacity);
+}

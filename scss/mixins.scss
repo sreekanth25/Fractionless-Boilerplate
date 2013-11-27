@@ -150,3 +150,6 @@
 	opacity: $opacity;
 	$opperc: $opacity * 100;
 }
+
+// rgba mixin from LESS version not included. Use built-in SASS @mixin rgba($color, $opacity) instead
+// For more info on SASS RGBA see: http://sass-lang.com/documentation/Sass/Script/Functions.html#rgba-instance_method
