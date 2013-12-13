@@ -24,3 +24,6 @@
 scratch.txt
 todo.txt
 workinggrid.less
+
+# Build stuff
+node_modules
