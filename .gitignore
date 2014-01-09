@@ -25,5 +25,5 @@ scratch.txt
 todo.txt
 workinggrid.less
 
-# NPM/Grunt/Build system ignores
+# Build stuff
 node_modules
