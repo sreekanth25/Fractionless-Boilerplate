@@ -29,6 +29,7 @@ todo.txt
 workinggrid.less
 
 #
-# Build stuff
+# Build files and folders
 #
 node_modules
+dist
