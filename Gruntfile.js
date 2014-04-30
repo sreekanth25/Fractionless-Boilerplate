@@ -261,7 +261,7 @@ module.exports = function(grunt) {
   // Run a local server
   grunt.registerTask('serve', [
     'express:all', 
-    //'open', 
+    'open', 
     'watch'
   ]);
 
