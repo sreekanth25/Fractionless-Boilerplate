@@ -1,5 +1,9 @@
 # Fraction.less Changelog
 
+## 3.0.0-beta1
+
+*4/17/2014*
+
 ## 2.1.0
 
 *7/3/2013*
