@@ -1,6 +1,6 @@
-# Fraction.less Boilerplate v2
+# Fraction.less Boilerplate
 
-*Current version: 2.0.3*
+*Current version: 3.0.0-beta1*
 
 Fraction.less is an HTML/CSS quick-start kit to get your website or app front-end up and running quickly. It's HTML5 ready, utilizes backwards compatible CSS3, comes with a bunch of useful and common JavaScript functionality, and it has LESS and SASS support if you want it.
 
@@ -15,7 +15,7 @@ Unlike most other frameworks, you'll spend most of your time building on top of 
 	* Forms
 	* Responsive grid
 	* Helper classes (think image replacement, hidden elements, etc.)
-	* Helful LESS and SASS mixins
+	* Helpful LESS and SASS mixins
 	* Media query starting points
 	* Comprehensive CSS reset thanks to Normalize.css
 	* Optimized print styles
@@ -159,3 +159,17 @@ The following features will be implemented in upcoming releases:
 * Build scripts and optimizers
 
 Contributors and suggetions welcome! bill-at-chooseclever-dot-com if you need to reach me but I'd much prefer it if you just created an issue or files a pull request in most cases. I'm very very happy to include others' contributions.
+
+# Troubleshooting
+
+## Grunt Tasks
+
+__Grunt Server Task Fails on OS X with "too many open files" error__ - This error has been traced to having a low `ulimit` set. If you get this error try the following:
+
+1. Run `ulimit -n` in the terminal. The limit may say something like "256". This is an issue. To adjust this setting run `ulimit -n 1024` and then `ulimit -n` to make sure your change was accepted. *Note that for some reason Mavericks only allows you to change the ulimit value once per terminal session. If you find the number you chose was too small and the error persists, open the directory in a new terminal window or tab and run `ulimit -n XXX` again.* Suggested values for `ulimit` in this case are 1024, 2048, or 4096. Error messages may persist but the watch task will work.
+
+2. An alternative solution is to update node and/or grunt. I use nvm (like rvm but for node) and I have several node versions on my machine. Try upgrading to the latest stable node to eliminate these errors.
+
+3. You may also try downgrading Grunt to v0.4.2.
+
+If any of these solutions do not work please open a ticket and be sure to include your OS and version, the node version you're running, your ulimit value, and the steps you took to try to resolve the problem. If you are missing any of these I will respond with a link to this section of the readme.
