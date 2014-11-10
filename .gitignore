@@ -1,0 +1,17 @@
+# Fraction.less Basic Ignores
+# Use this as a starting point for
+# your gitignore. Sensitive data
+# should live in env vars, not your
+# repository.
+
+# Dependencies should be installed
+# upon first clone, not bundled with
+# with your front-end.
+bower_components/
+node_modules/
+
+# Built files are like dependencies.
+# Identical builds should be possible
+# any time so there's no need to bundle
+# them with your code.
+dist/

@@ -1,0 +1,19 @@
+/* TEAM */
+Core Contributor: Bill Patrianakos
+Site: http://billpatrianakos.me
+Twitter: @chooseclever
+Location: Chicago, USA
+
+Core Contributor: [Space available!]
+Site: [Vacant]
+Twitter: [This could be you!]
+Location: [Where you at?]
+
+/* THANKS */
+Name: Your name and/or URL can go here! (See contributing.md)
+
+/* SITE */
+Last update: 2014/09/02
+Standards: HTML5, CSS3
+Components: jQuery, Grunt, Bower, Mustache
+Software: Sublime Text 3, Photoshop CS6, Hues

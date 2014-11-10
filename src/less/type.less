@@ -1,0 +1,181 @@
+/**
+ * Typographic styles
+ */
+
+/*! Typebase.less v0.1.0 | MIT License */
+
+
+// Typesetting variables. Edit these!
+@baseFontSize: 18; // in pixels. This would result in 22px on desktop
+@baseLineHeight: 1.5; // how large the line height is as a multiple of font size
+@leading: @baseLineHeight * 1rem;
+
+// Define font stacks here
+@serif: 'Noto Serif', Georgia, 'Times New Roman', serif;
+@sans-serif: 'Fira Sans', 'Helvetica Neue', Helvetica, Verdana, sans-serif;
+@mono: 'Fira Mono', 'Source Code Pro', Menlo, monospace;
+
+// Rate of growth for headings
+// I actually like this to be slightly smaller then the leading. Makes for tight headings.
+@scale: 1.414;
+
+/* Setup */
+html {
+  /* Change default typefaces here */
+  font-family: @serif;
+  font-size: @baseFontSize / 16 * 100%;
+
+  // Make everything look a little nicer in webkit
+  -webkit-font-smoothing: antialiased;
+
+  // -webkit-text-size-adjust: auto;
+  // -moz-text-size-adjust: auto;
+  // -ms-text-size-adjust: auto;
+  // -o-text-size-adjust: auto;
+  // text-size-adjust: auto;
+}
+
+/* Copy & Lists */
+p {
+  .font-stack(@serif, 400);
+  line-height: @leading + 0.2;
+  margin-top: @leading;
+  margin-bottom: 0;
+  color: @content;
+}
+
+small {
+  color: inherit;
+  font-style: italic;
+}
+
+a {
+  .font-stack(@sans-serif, 400);
+  h1, h2, h3, h4, h5, h6 {
+    &:hover {
+      color: @hlink;
+    }
+  }
+}
+
+ul, ol {
+  .font-stack(@sans-serif, 400);
+  margin-top: @leading;
+  margin-bottom: @leading;
+
+  li {
+    .font-stack(@sans-serif, 400);
+    line-height: @leading;
+  }
+
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+blockquote {
+  .font-stack(@serif, 700);
+  line-height: @leading;
+  margin-top: @leading;
+  margin-bottom: @leading;
+}
+
+time {
+  .font-stack(@mono, 400);
+  .font-size(0.8);
+  display: inline-block;
+}
+
+// Links
+a {
+  color: @links;
+  text-decoration: none;
+  &:hover {
+    color: @hlink;
+  }
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  /* Change heading typefaces here */
+  .font-stack(@sans-serif, 700);
+  color: @headlines;
+  margin-top: @leading;
+  margin-bottom: 0;
+  line-height: @leading;
+}
+
+h1 { font-size: 3 * @scale * 1rem; line-height: 3 * @leading; margin-top: 2 * @leading; }
+h2 { font-size: 2 * @scale * 1rem; line-height: 2 * @leading; margin-top: 2 * @leading; }
+h3 { font-size: 1 * @scale * 1rem; }
+h4 { font-size: @scale / 2 * 1rem; }
+h5 { font-size: @scale / 3 * 1rem; }
+h6 { font-size: @scale / 4 * 1rem; }
+
+/* Tables */
+table {
+  margin-top: @leading;
+  border-spacing: 0px;
+  border-collapse: collapse;
+
+  td, th {
+    &:extend(.sans-serif);
+    padding: 0;
+    line-height: @baseLineHeight * @baseFontSize - 0px;
+  }
+}
+
+/* Code blocks */
+code {
+  // Forces text to constrain to the line-height. Not ideal, but works.
+  vertical-align: bottom;
+  &:extend(.mono);
+}
+
+/* Leading paragraph text */
+.lead {
+  font-size: @scale * 1rem;
+}
+
+/* Hug a the block above you */
+.hug {
+  margin-top: 0;
+}
+
+/**
+ * Helpers
+ *
+ * These are mixins and classes
+ * meant only to extend or be mixed into other rule sets
+ */
+
+.font-stack(@face: @sans-serif, @weight: 400) {
+  font-family: @face;
+  font-weight: @weight;
+}
+
+// Font Size Helper
+//
+// Given a desired font-size, this mixin will
+// set the font size in REMs and the correct
+// line height based on it.
+.font-size(@size) {
+  font-size: @size * 1rem;
+  line-height: (@baseLineHeight * @size) * 1rem;
+  margin-top: (@baseLineHeight * @size) * 1rem;
+  margin-bottom: 0;
+}
+
+// TODO: Deprecate these classes.
+.sans-serif {
+  .font-stack(@sans-serif);
+}
+
+.mono {
+  .font-stack(@mono);
+}
+
+.serif {
+  .font-stack(@serif);
+}

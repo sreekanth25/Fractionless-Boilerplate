@@ -1,0 +1,28 @@
+{
+  "name": "Fractionless-Boilerplate",
+  "version": "3.0.0",
+  "homepage": "https://github.com/billpatrianakos/Fractionless-Boilerplate",
+  "authors": [
+    "Bill Patrianakos <bill@billpatrianakos.me>"
+  ],
+  "description": "A collection of front-end code you can build up instead of tear down",
+  "main": "src/index.html",
+  "keywords": [
+    "UI",
+    "front-end",
+    "html5",
+    "boilerplate",
+    "css",
+    "framework"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components/",
+    "test",
+    "tests"
+  ]
+}

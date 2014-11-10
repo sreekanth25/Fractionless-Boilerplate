@@ -1,0 +1,38 @@
+# Keep your code styles consistent with
+# Editorconfig. This is only a general
+# guideline. Please feel free to change the
+# code style to your liking but don't forget
+# to update this file if you do!
+#
+# If you don't know about editorconfig,
+# check it out now: http://EditorConfig.org
+
+# This is the root config 
+# (.editorconfig files in subdirs will override this for that directory)
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Despite Crockford's recommendation, the JS hipsters use
+# a 2-space indent and we're on that bandwagon now too
+[*.js]
+indent_style = space
+indent_size = 2
+
+# HTML is cleaner and easier to read with a 2-space indent
+[*.html]
+indent_style = space
+indent_size = 2
+
+# Docs should have a 2-space indent so Markdown code blocks can be parsed reliably
+[*.md]
+indent_style = space
+indent_size = 2
+
+# Styles use a 2-space indent
+[{*.css,*.less,*.sass}]
+indent_style = space
+indent_size = 2

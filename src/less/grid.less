@@ -1,0 +1,113 @@
+/**
+ * Grid System
+ *
+ * The Sndicate grid relies completely on [Less](http://lesscss.org)
+ * to perform its functions.
+ */
+
+//:::: Grid Variables :::://
+
+@max-width: 1140px;
+@min-width: 755px;
+@total-columns: 12;
+@gutter: 3%;
+@column: ((@max-width / @total-columns) * 100) / @max-width;
+
+// Containers divide pages into sections
+//
+// A container can contain multiple rows.
+// Useful for full-page backgrounds. Nesting
+// containers is not supported and is not a
+// good or useful idea anyway.
+.container {
+  padding: 0 20px;
+  .clearfix;
+}
+
+// A single row contains twelve columns
+//
+// Use a row to split your page into horizontal
+// sections that contain one or more columns
+.row {
+  display: block;
+  width: 100%;
+  max-width: @max-width;
+  min-width: @min-width;
+  margin: 10px auto;
+  overflow: hidden;
+  .clearfix;
+}
+
+// Column mixin
+//
+// Creates a block that is a percentage width
+// of the row it is contained in.
+//
+// @columns - The number of columns one block spans
+// Defaults to full-page width.
+.column(@columns: @total-columns) {
+  display: block;
+  float: left;
+  width: (@column * @columns) - @gutter;
+  margin: 0 (@gutter / 2);
+}
+
+//:::: Helper Classes :::://
+
+// Column class helper
+//
+// This mixin is run in a loop an amount of times
+// equal to the number of total columns in the grid.
+// It creates that many `.col-x` classes for use in
+// your markup.
+.create-cols(@i) when (@i > 0) {
+  .col-@{i} { .column(@i); }
+  .create-cols(@i - 1);
+}
+.create-cols(@total-columns);
+
+// Push and pull helpers
+//
+// Standard push pull except we generate them like
+// the .create-cols class creates column classes.
+// You can use them as standalone mixins too.
+//
+// FIXME: Push/Pull classes don't work as expected
+.push(@offset) {
+  margin-left: percentage((@column * @offset) / 100);
+}
+
+.pull(@offset) {
+  margin-right: percentage((@column * @offset) / 100);
+}
+
+.create-push-pull(@i) when (@i > 0) {
+  .push-@{i} { .push(@i); }
+  .pull-@{i} { .pull(@i); }
+  .create-push-pull(@i - 1);
+}
+//.create-push-pull(@total-columns); // Uncomment to create push/pull classes
+
+// The micro clearfix hack (more of a technique than hack)
+// http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix() {
+  *zoom:1;
+  
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// A little help for responsive images
+img, object, embed {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}

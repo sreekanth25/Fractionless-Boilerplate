@@ -1,0 +1,115 @@
+/**
+ * Main Stylesheet
+ *
+ * The file `css/style.css` is created from
+ * this. Put all custom styling here.
+ */
+
+@import 'font-awesome/font-awesome';
+@import 'colors';
+@import 'mixins';
+@import 'grid';
+@import 'type';
+
+/*:::: Custom Styling Here ::::*/
+
+// TODO: Refactor into modules.
+// Eventually these styles should be refactored into
+// reuseable components and broken out into their own
+// files. Any overrides should then go here. Until then
+// we'll write all the theme styling in here.
+
+header {
+  border-top: 5px solid @green;
+  border-bottom: 1px solid darken(@white, 5%);
+  background: @white;
+
+  nav {
+    ul {
+      display: inline-block;
+      padding: 0;
+      list-style: none;
+      margin: 0;
+      &:last-child {
+        float: right;
+      }
+      li {
+        display: inline;
+        margin-right: 1rem;
+        &:first-child {
+          margin-right: auto;
+        }
+        a, a:visited {
+          color: @blue;
+          font-weight: 700;
+          &:hover {
+            color: @orange;
+          }
+        }
+      }
+    }
+  }
+
+  .logo {
+    font-size: 1rem;
+    line-height: @leading + 0.2;
+    .hug;
+    display: inline;
+    &:after {
+      content: ' | ';
+      color: @orange;
+      margin: auto 0.5rem;
+    }
+  }
+}
+
+main {
+  .entry {
+    time {
+      .hug;
+      color: @headlines;
+    }
+  }
+
+  .sidebar {
+    &:first-child h3 {
+      margin-top: @leading * 3;
+    }
+    p {
+      .font-size(0.9);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+footer {
+  background: @green;
+  border-top: 5px solid darken(@green, 5%);
+  .box-sizing(border-box);
+  margin-top: @leading;
+
+  p, ul li, a {
+    color: @blue;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+    li {
+      display: inline;
+      margin-right: 1rem;
+      .font-size(0.8);
+      a:hover {
+        color: @orange;
+      }
+    }
+  }
+}
